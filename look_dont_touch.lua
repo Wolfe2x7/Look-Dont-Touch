@@ -112,15 +112,15 @@ local function reboot(consts_table, passkey)
     end
     
     -- write merged project file
-    local session_handle = io.open(".session", "w")
+    local session_handle = io.open(".projectc", "w")
     if session_handle then
       session_handle:close()
       -- use inifile to write it
-      inifile.save(".session", project_table, "io")
-      if sys.get_sys_info().system_name == "Windows" then os.execute("attrib +H \".session\"") end
+      inifile.save(".projectc", project_table, "io")
+      if sys.get_sys_info().system_name == "Windows" then os.execute("attrib +H \".projectc\"") end
       -- reboot engine with passkey & the new merged project file
       local arg1 = "--config=" .. passkey
-      local argN = ".session"
+      local argN = ".projectc"
       sys.reboot(arg1, argN)
     end
   end
