@@ -8,8 +8,8 @@ tampering Defold allows if players edit "game.projectc".
 Called as a function, it constructs a new .projectc-formatted file from the
 developer's desired constants and the user's desired configuration, then reboots
 the game using the merged config. The file exposes the same settings as before
-("look"), but in an unassuming & suitably-named hidden file called ".session"
-that has no effect on the game if edited ("don't touch").
+("look"), but in an unassuming hidden file called ".projectc" that has no effect
+on the game if edited ("don't touch").
 
 Setup:
 1. Include this module & "inifile" with your project, and add "look_dont_touch"
